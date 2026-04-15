@@ -1,0 +1,14 @@
+kadamyash966_db_user,Rx89csQk1l935tw7
+
+
+mongodb+srv://yashkadam:admin@3030@testing.oz0zpcj.mongodb.net/?appName=testing
+
+
+103.179.122.187/32
+mongodb+srv://yashkadam:<db_password>@testing.oz0zpcj.mongodb.net/?appName=testing
+
+Role-based access control
+✔ Full CRUD system
+✔ Soft delete
+✔ Secure password handling
+✔ Protected APIs
