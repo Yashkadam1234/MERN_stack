@@ -8,7 +8,7 @@ This project is developed as part of a technical assessment for demonstrating **
 
 ## 🚀 Live Demo
 
-- 🌐 Frontend:
+- 🌐 Frontend:https://mern-stack-blush-two.vercel.app
   ### 🔑 (Demo Credentials)
   ### Admin Login
    Email: admin@gmail.com  
