@@ -232,16 +232,5 @@ npm start
 ✔ RESTful API design  
 ✔ Audit tracking (createdAt, updatedAt, createdBy, updatedBy)  
 
----
-
-## 📌 Future Improvements
-- Refresh token implementation
-- Email verification system
-- Advanced analytics dashboard
-- Activity logs per user
-- Two-factor authentication (2FA)
-
----
-
 ## 👨‍💻 Author
 **Yash Kadam**
