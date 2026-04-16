@@ -169,9 +169,9 @@ frontend/
 
 ### Backend `.env`
 
-PORT=5000;
-MONGO_URI=mongodb://yashkadam:admin%403030@ac-shaxrfj-shard-00-00.oz0zpcj.mongodb.net:27017,ac-shaxrfj-shard-00-01.oz0zpcj.mongodb.net:27017,ac-shaxrfj-shard-00-02.oz0zpcj.mongodb.net:27017/?ssl=true&replicaSet=atlas-cnoo6h-shard-0&authSource=admin&appName=testing ;
-JWT_SECRET=your_jwt_secret
+1. PORT=5000;
+2. MONGO_URI=mongodb://yashkadam:admin%403030@ac-shaxrfj-shard-00-00.oz0zpcj.mongodb.net:27017,ac-shaxrfj-shard-00-01.oz0zpcj.mongodb.net:27017,ac-shaxrfj-shard-00-02.oz0zpcj.mongodb.net:27017/?ssl=true&replicaSet=atlas-cnoo6h-shard-0&authSource=admin&appName=testing ;
+3. JWT_SECRET=your_jwt_secret
 
 
 ### Frontend `.env`
