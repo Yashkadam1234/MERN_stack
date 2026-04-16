@@ -10,45 +10,54 @@ export default function Navbar() {
   };
 
   return (
-    <div className="bg-gray-900 text-white px-6 py-3 flex justify-between items-center shadow-md">
-      <h1 className="font-bold text-lg">MERN Admin Panel</h1>
+    <div className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white shadow-lg">
+      
+      {/* REMOVE max-w + mx-auto */}
+      <div className="w-full flex justify-between items-center px-6 py-3">
 
-      <div className="flex gap-4 items-center">
-        <span className="text-sm bg-gray-700 px-3 py-1 rounded">
-          {role}
-        </span>
+        {/* LEFT - BRAND */}
+        <h1 className="font-bold text-xl tracking-wide">
+          MERN Admin Panel
+        </h1>
 
-        <button
-          onClick={() => navigate("/dashboard")}
-          className="hover:text-blue-400"
-        >
-          Dashboard
-        </button>
+        {/* RIGHT - MENU */}
+        <div className="flex gap-6 items-center text-sm">
 
-        {/* ✅ PROFILE (FOR ALL) */}
-        <button
-          onClick={() => navigate("/profile")}
-          className="hover:text-blue-400"
-        >
-          Profile
-        </button>
+          <span className="bg-gray-700 px-3 py-1 rounded-full text-xs capitalize">
+            {role}
+          </span>
 
-        {/* ✅ ONLY ADMIN & MANAGER */}
-        {(role === "admin" || role === "manager") && (
           <button
-            onClick={() => navigate("/users")}
-            className="hover:text-blue-400"
+            onClick={() => navigate("/dashboard")}
+            className="hover:text-blue-400 transition"
           >
-            Users
+            Dashboard
           </button>
-        )}
 
-        <button
-          onClick={logout}
-          className="bg-red-500 px-3 py-1 rounded hover:bg-red-600"
-        >
-          Logout
-        </button>
+          <button
+            onClick={() => navigate("/profile")}
+            className="hover:text-blue-400 transition"
+          >
+            Profile
+          </button>
+
+          {(role === "admin" || role === "manager") && (
+            <button
+              onClick={() => navigate("/users")}
+              className="hover:text-blue-400 transition"
+            >
+              Users
+            </button>
+          )}
+
+          <button
+            onClick={logout}
+            className="bg-red-500 px-3 py-1 rounded-md hover:bg-red-600 transition"
+          >
+            Logout
+          </button>
+
+        </div>
       </div>
     </div>
   );

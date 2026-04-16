@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+
+const API = process.env.REACT_APP_API_URL;
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -8,9 +10,18 @@ export default function Login() {
 
   const navigate = useNavigate();
 
+  // 🚀 FIX: disable scroll only on login page
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
+
   const handleLogin = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
+      const res = await axios.post(`${API}/api/auth/login`, {
         email,
         password,
       });
@@ -20,19 +31,19 @@ export default function Login() {
 
       navigate("/dashboard");
     } catch (err) {
+      console.log(err);
       alert("Invalid credentials");
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <div className="h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
 
-      {/* CARD */}
+      {/* LOGIN CARD */}
       <div className="bg-white w-[380px] p-8 rounded-2xl shadow-2xl">
 
-        {/* TITLE */}
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
-           Login to Dashboard
+          Login to Dashboard
         </h2>
 
         {/* EMAIL */}
@@ -59,7 +70,6 @@ export default function Login() {
           Login
         </button>
 
-        {/* FOOTER */}
         <p className="text-xs text-center text-gray-500 mt-4">
           MERN System © 2026
         </p>
