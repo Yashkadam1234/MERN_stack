@@ -19,12 +19,16 @@ app.use(cors({
 app.use(express.json());
 
 // ================= HEALTH CHECK ROUTE =================
-// 👉 THIS IS FOR UPTIME ROBOT + TESTING
+// THIS IS FOR UPTIME ROBOT + TESTING
 app.get("/", (req, res) => {
   res.status(200).json({
     status: "ok",
     message: "Backend is running"
   });
+});
+
+app.get("/health", (req, res) => {
+  res.status(200).send("OK");
 });
 
 // ================= ROUTES =================
